@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movimiento Universitario Patria - Bioimágenes</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root { --azul: #004b9b; --celeste: #5eb0e5; --blanco: #ffffff; }
         
@@ -12,13 +15,13 @@
             margin: 0; 
             padding: 0; 
             color: #333;
-            /* --- CAMBIO AQUÍ PARA EL FONDO --- */
-            /* Asegúrate de guardar tu imagen como 'fondo.jpg' en la misma carpeta */
+            /* Color de respaldo por si la imagen tarda en cargar */
+            background-color: #e6f2ff; 
             background-image: url('fondo.jpg'); 
             background-repeat: no-repeat;
-            background-size: cover; /* Cubre toda la pantalla */
-            background-position: center; /* Centra la imagen */
-            background-attachment: fixed; /* El fondo se queda quieto al hacer scroll */
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
         }
 
         header { 
@@ -36,7 +39,7 @@
 
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .logo-container img { width: 80px; height: auto; border-radius: 5px; background-color: white; }
-        h1 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; line-height: 1.3; }
 
         main { 
             padding: 30px; 
@@ -46,27 +49,65 @@
         }
 
         .card { 
-            /* Mantenemos un fondo semi-transparente para que el texto sea legible */
-            background: rgba(249, 249, 249, 0.95); 
+            /* Ajustado al 95% de opacidad: el equilibrio perfecto */
+            background: rgba(255, 255, 255, 0.90); 
             border-top: 4px solid var(--celeste); 
             padding: 20px; 
             border-radius: 8px; 
             margin-bottom: 30px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
         }
 
-        input[type="text"], input[type="text"]:focus { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        input[type="text"], input[type="text"]:focus { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; background: rgba(255,255,255,0.9); }
         button.action-btn { background-color: var(--azul); color: var(--blanco); border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-size: 1rem; width: 100%; font-weight: bold; }
         button.action-btn:hover { background-color: #003875; }
         
         .table-responsive { width: 100%; overflow-x: auto; }
+        
+        /* Tabla con fondo blanco sólido para legibilidad sobre el fondo general */
         table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 600px; background-color: white; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background-color: var(--azul); color: var(--blanco); }
-        tr:hover { background-color: #f1f1f1; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        th { background-color: var(--azul); color: var(--blanco); border-bottom: none; }
+        tr:hover { background-color: rgba(0, 0, 0, 0.05); }
         
         .btn-whatsapp { background-color: #25D366; color: white !important; padding: 8px 12px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin: 4px 0; font-size: 0.9rem; text-align: center; }
-        @media (max-width: 600px) { header { flex-direction: column; gap: 15px; text-align: center; } h1 { font-size: 1.2rem; } main { padding: 15px; } }
+
+        /* Estilos para los botones de redes sociales */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px); 
+            color: white;
+        }
+
+        .btn-facebook { background-color: #1877F2; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-tiktok { background-color: #000000; }
+
+        @media (max-width: 600px) { 
+            header { flex-direction: column; gap: 15px; text-align: center; } 
+            h1 { font-size: 1.2rem; } 
+            main { padding: 15px; } 
+        }
     </style>
 </head>
 <body>
@@ -74,14 +115,13 @@
     <header>
         <div class="logo-container">
             <img src="logo.jpg" alt="Logo Patria Unpaz">
-            <h1>Movimiento Universitario Patria
-            bioimagenes</h1>
+            <h1>Movimiento Universitario Patria<br>Bioimágenes 🩻</h1>
         </div>
     </header>
 
     <main>
         <div class="card">
-            <h2>Buscar Materias y Comisiones</h2>
+            <h2>Materias 1er cuatri 2026 UnPaz</h2>
             <input type="text" id="searchInput" placeholder="Buscar por materia, año o comisión..." onkeyup="filtrarTabla()">
             
             <div class="table-responsive">
@@ -107,15 +147,23 @@
                 <input type="text" id="materia" placeholder="Nombre de la Materia" required>
                 <input type="text" id="año" placeholder="Año (Ej: 1er Año)" required>
                 <input type="text" id="comision" placeholder="Comisión (Ej: A1)" required>
-                <input type="text" id="whatsapp" placeholder="Enlace de WhatsApp">
+                <input type="text" id="whatsapp" placeholder="Enlace de WhatsApp (Opcional)">
                 <button type="submit" class="action-btn">Guardar en Base de Datos</button>
             </form>
             <p id="mensaje-form" style="display:none; color: green; margin-top: 10px; font-weight:bold;">¡Datos guardados con éxito!</p>
         </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>Síguenos en nuestras redes</h2>
+            <div class="social-container">
+                <a href="https://www.facebook.com/share/18NADwakih/" target="_blank" class="social-btn btn-facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/movimientopatria__unpaz?igsh=MTR6YXZneWNib25hbw==" target="_blank" class="social-btn btn-instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@movimientopatria_unpaz?_r=1&_t=ZS-94Z828l82Js" target="_blank" class="social-btn btn-tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
     </main>
 
     <script>
-        // Tu URL pública actualizada
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrcg1VI3tbusFvPqIdZyX2MXgP9epsW0VE83pUVmG0EutZ1M8GxpcEDe5rzPAmmA/exec';
 
         document.addEventListener("DOMContentLoaded", cargarDatos);
